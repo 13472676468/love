@@ -1,0 +1,42 @@
+<html>
+<head>
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+    <meta charset="utf-8">
+  <title>table模块快速使用</title>
+  <link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+
+
+</head>
+<body>
+<script src="/static/layui/layui.js"></script>
+<table id="demo"></table>
+<script>
+layui.use('table', function(){
+  var table = layui.table;
+  //第一个实例
+  table.render({
+    elem: '#demo'
+    ,height: 312
+      ,width:400
+    ,url: '/demo' //数据接口
+    ,page: true //开启分页
+      ,limit:50
+      ,loading:true
+    ,cols: [[ //表头
+      {field: 'id', title: 'ID', width:80, fixed: 'left'}
+      ,{field: 'username', title:'账号' }
+      ,{field: 'sex', title: '密码'}
+      ,{field: 'city', title: '状态', width:80,sort:true,edit:'text'}
+{#      ,{field: 'experience', title: '积分', width: 80, sort: true}#}
+{#      ,{field: 'score', title: '评分', width: 80, sort: true}#}
+{#      ,{field: 'classify', title: '职业', width: 80}#}
+{#      ,{field: 'wealth', title: '财富', width: 135, sort: true}#}
+    ]]
+
+  });
+
+});
+</script>
+
+</body>
+</html>
