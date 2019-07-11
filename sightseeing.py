@@ -12,6 +12,6 @@ def jinqu(num):
     return render_template('./test.html', vnc_url=vnc_url)
     # return json.dumps({'state': 1})
 
-
+#这个地方有点问题到底是谁的问题
 if __name__ == '__main__':
     app.run(port=5010)
